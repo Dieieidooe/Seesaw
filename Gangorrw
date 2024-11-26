@@ -1,0 +1,56 @@
+HTML*
+```
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Localizador de Telefones</title>
+ <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+ <h1>Localizador de Telefones</h1>
+ <input id="numero" type="text" placeholder="Número de Telefone">
+ <button id="buscar">Buscar</button>
+ <div id="resultado"></div>
+
+ <script src="script.js"></script>
+</body>
+</html>
+```
+
+*CSS (em estilo.css)*
+```
+body {
+ font-family: Arial, sans-serif;
+}
+
+#resultado {
+ margin-top: 20px;
+}
+```
+
+*JavaScript (em script.js)*
+```
+const inputNumero = document.getElementById('numero');
+const btnBuscar = document.getElementById('buscar');
+const divResultado = document.getElementById('resultado');
+
+btnBuscar.addEventListener('click', buscarNumero);
+
+function buscarNumero() {
+ const numero = inputNumero.value;
+ const apikey = 'SUA_API_KEY_AQUI'; // Insira sua API key
+ const url = `(link unavailable);
+
+ fetch(url)
+ .then(resposta => resposta.json())
+ .then(dados => {
+ if (dados.status === 'valid') {
+ const texto = `País: ${dados.country_name}\nCódigo: ${dados.country_code}\nOperadora: ${dados.carrier}`;
+ divResultado.innerText = texto;
+ } else {
+ divResultado.innerText = 'Número inválido ou não encontrado.';
+ }
+ })
+ .catch(erro => console.error(erro));
+}
+```
